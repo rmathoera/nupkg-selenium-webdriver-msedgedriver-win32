@@ -41,7 +41,6 @@ echo BuildPackage.bat 81.12.654 pre   ----- this generates a nuget package with 
 echo BuildPackage.bat 81.12.654 beta  ----- this generates a nuget package with a beta release version for testing.
 echo BuildPackage.bat 81.12.654 dev   ----- this generates a nuget package with a dev release version for testing.
 echo .
-echo oy2glps5bprq2q3e33rawm776i5ycuiehmegnludmpre34
 echo to get your system's MsEdge version:
 echo powershell.exe (Get-Item '"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"').VersionInfo
 :finish
