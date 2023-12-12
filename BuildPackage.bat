@@ -18,6 +18,8 @@ PowerShell -Command "Expand-Archive -Path .\download\%version%\edgedriver_linux6
 
 if [%~2]==[] PowerShell -Command "(Get-Content -path Selenium.WebDriver.MSEdgeDriver.template.nuspec -Raw) -replace '_version_','%version%'" > %nugetFile%
 if [%~2]==[pre] PowerShell -Command "(Get-Content -path Selenium.WebDriver.MSEdgeDriver.template-pre.nuspec -Raw) -replace '_version_','%version%'" > %nugetFile%
+if [%~2]==[beta] PowerShell -Command "(Get-Content -path Selenium.WebDriver.MSEdgeDriver.template-beta.nuspec -Raw) -replace '_version_','%version%'" > %nugetFile%
+if [%~2]==[dev] PowerShell -Command "(Get-Content -path Selenium.WebDriver.MSEdgeDriver.template-dev.nuspec -Raw) -replace '_version_','%version%'" > %nugetFile%
 
 nuget pack %nugetFile% -OutputDirectory .\dist
 
@@ -29,17 +31,21 @@ echo Done
 echo to publish run:
 if [%~2]==[] echo nuget push -Source nuget.org -ApiKey %NUGETPUSHAPIKEY% .\dist\Selenium.WebDriver.MSEdgeDriver.%version%.nupkg
 if [%~2]==[pre] echo nuget push -Source nuget.org -ApiKey %NUGETPUSHAPIKEY% .\dist\Selenium.WebDriver.MSEdgeDriver.%version%-pre.nupkg
+if [%~2]==[beta] echo nuget push -Source nuget.org -ApiKey %NUGETPUSHAPIKEY% .\dist\Selenium.WebDriver.MSEdgeDriver.%version%-beta.nupkg
+if [%~2]==[dev] echo nuget push -Source nuget.org -ApiKey %NUGETPUSHAPIKEY% .\dist\Selenium.WebDriver.MSEdgeDriver.%version%-dev.nupkg
 goto :finish
 
 :noversion
 echo .
 echo .
 echo missing version parameter
-echo usage: getPackage.bat VERSION [pre]
+echo usage: BuildPackage.bat VERSION [pre]
 echo Example
-echo getPackage.bat 81.12.654
+echo BuildPackage.bat 81.12.654
 echo or
-echo getPackage.bat 81.12.654 pre   ----- this generates a nuget package with a pre release version for testing.
+echo BuildPackage.bat 81.12.654 pre   ----- this generates a nuget package with a pre release version for testing.
+echo BuildPackage.bat 81.12.654 beta  ----- this generates a nuget package with a beta release version for testing.
+echo BuildPackage.bat 81.12.654 dev   ----- this generates a nuget package with a dev release version for testing.
 echo .
 echo .
 echo to get your system's MsEdge version:
