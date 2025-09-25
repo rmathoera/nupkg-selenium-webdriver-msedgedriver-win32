@@ -5,10 +5,10 @@
     <version>_version_</version>
     <title>Selenium.WebDriver.EdgeChromiumDriver(Win32)</title>
     <authors>rmathoera</authors>
-	<readme>docs\README.md</readme>
+	<readme>README.md</readme>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectUrl>https://github.com/leandrodotec/nupkg-selenium-webdriver-msedgedriver</projectUrl>
-    <license type="file">LICENSE</license>
+    <license type="file">LICENSE.txt</license>
     <description>Installs the new Edge (Chromium) WebDriver Package to be used with Selenium.
 	Just like the other Selenium.WebDriver packages, "msedgedriver(.exe)" is copied from package folder to bin folder when the project builds.
 	</description>
@@ -19,7 +19,7 @@
     <file src="download\_version_\edgedriver_win32\msedgedriver.exe" target="driver/win32"/>
     <file src="Selenium.WebDriver.MSEdgeDriver.win32.targets" target="build"/>
     <file src="DefinePropertiesMSEdgeDriver.win32.targets" target="build"/>
-    <file src="LICENSE" target="LICENSE"/>
-	<file src="README.md" target="docs\" />
+    <file src="LICENSE.txt" target="."/>
+    <file src="README.md" target="." />
   </files>
 </package>

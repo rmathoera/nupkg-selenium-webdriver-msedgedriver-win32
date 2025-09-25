@@ -7,10 +7,10 @@ set nugetFile=Selenium.WebDriver.MSEdgeDriver.nuspec
 
 mkdir .\download\%version%
 echo  Downloading %version%
-curl https://msedgedriver.azureedge.net/%version%/edgedriver_win32.zip -o .\download\%version%\edgedriver_win32.zip
-curl https://msedgedriver.azureedge.net/%version%/edgedriver_win64.zip -o .\download\%version%\edgedriver_win64.zip
-curl https://msedgedriver.azureedge.net/%version%/edgedriver_mac64.zip -o .\download\%version%\edgedriver_mac64.zip
-curl https://msedgedriver.azureedge.net/%version%/edgedriver_linux64.zip -o .\download\%version%\edgedriver_linux64.zip
+curl https://msedgedriver.microsoft.com/%version%/edgedriver_win32.zip -o .\download\%version%\edgedriver_win32.zip
+curl https://msedgedriver.microsoft.com/%version%/edgedriver_win64.zip -o .\download\%version%\edgedriver_win64.zip
+curl https://msedgedriver.microsoft.com/%version%/edgedriver_mac64.zip -o .\download\%version%\edgedriver_mac64.zip
+curl https://msedgedriver.microsoft.com/%version%/edgedriver_linux64.zip -o .\download\%version%\edgedriver_linux64.zip
 PowerShell -Command "Expand-Archive -Path .\download\%version%\edgedriver_win32.zip -DestinationPath .\download\%version%\edgedriver_win32"
 PowerShell -Command "Expand-Archive -Path .\download\%version%\edgedriver_win64.zip -DestinationPath .\download\%version%\edgedriver_win64"
 PowerShell -Command "Expand-Archive -Path .\download\%version%\edgedriver_mac64.zip -DestinationPath .\download\%version%\edgedriver_mac64"
